@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Components/Header';
+import './includes/css/App.css';
+import React, { useState } from 'react'
+import TextForm from './Components/TextForm';
 
 function App() {
+
+  const [mode, setMode] = useState('light');
+
+  const ThemeMode = () => {
+    if (mode === 'light') {
+      setMode('dark');
+      document.body.style.backgroundColor = '#212529';
+    }else{
+      setMode('light');
+      document.body.style.backgroundColor = '#f8f9fa';
+    }
+  }
+
+  const [Window_State, setWindow_State] = useState(
+    
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title="SUVEESOFT" mode={mode} ThemeMode={ThemeMode} />
+      <TextForm heading="Enter The Text To Analyze:"></TextForm>
+    </>
   );
 }
 
