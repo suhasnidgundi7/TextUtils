@@ -17,10 +17,6 @@ function App() {
     }
   }
 
-  const [Window_State, setWindow_State] = useState(
-    
-  )
-
   return (
     <>
       <Header title="SUVEESOFT" mode={mode} ThemeMode={ThemeMode} />
